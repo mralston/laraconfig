@@ -1,0 +1,58 @@
+{
+  "name": "mralston/laraconfig",
+  "description": "Per-user settings repository system for Laravel",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Italo Baeza C.",
+      "email": "darkghosthunter@gmail.com"
+    },
+    {
+      "name": "Matt Ralston",
+      "email": "matt@mralston.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "illuminate/database": "^8.43|^9.0|^10.0",
+    "illuminate/support": "^8.43|^9.0|^10.0",
+    "illuminate/collections": "^8.43|^9.0|^10.0",
+    "illuminate/config": "^8.43|^9.0|^10.0",
+    "illuminate/cache": "^8.43|^9.0|^10.0",
+    "symfony/console": "^5.3"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.4.3",
+    "orchestra/testbench": "^6.19",
+    "phpunit/phpunit": "^9.5.4"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Mralston\\Laraconfig\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mralston\\Laraconfig\\LaraconfigServiceProvider"
+      ],
+      "aliases": {
+        "Setting": "Mralston\\Laraconfig\\Facades\\Setting"
+      }
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --coverage-clover build/logs/clover.xml",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
