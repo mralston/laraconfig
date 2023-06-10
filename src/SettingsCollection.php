@@ -22,6 +22,7 @@ class SettingsCollection extends Collection
     use EnumeratesValues {
         __get as __dynamicGet;
     }
+
     /**
      * The cache helper instance.
      *
@@ -58,7 +59,7 @@ class SettingsCollection extends Collection
      *
      * @return \Illuminate\Support\Carbon|\Illuminate\Support\Collection|array|string|int|float|bool|null
      */
-    public function value($key, $default = null)
+    public function value($name, $default = null)
     {
         $setting = $this->get($name, $default);
 
